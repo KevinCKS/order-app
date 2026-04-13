@@ -7,6 +7,7 @@ const MENU = [
     name: '아메리카노(ICE)',
     price: 4000,
     description: '깔끔하고 시원한 아메리카노',
+    imageSrc: '/menu/americano-ice.jpg',
     options: [
       { id: 'shot', label: '샷 추가', priceDelta: 500 },
       { id: 'syrup', label: '시럽 추가', priceDelta: 0 },
@@ -17,6 +18,7 @@ const MENU = [
     name: '아메리카노(HOT)',
     price: 4000,
     description: '진한 향의 따뜻한 아메리카노',
+    imageSrc: '/menu/americano-hot.jpg',
     options: [
       { id: 'shot', label: '샷 추가', priceDelta: 500 },
       { id: 'syrup', label: '시럽 추가', priceDelta: 0 },
@@ -27,6 +29,7 @@ const MENU = [
     name: '카페라떼',
     price: 5000,
     description: '부드러운 우유 거품과 에스프레소',
+    imageSrc: '/menu/caffe-latte.jpg',
     options: [
       { id: 'shot', label: '샷 추가', priceDelta: 500 },
       { id: 'vanilla', label: '바닐라 시럽', priceDelta: 300 },
@@ -68,7 +71,7 @@ function MenuCard({ item, onAdd }) {
 
   return (
     <article className="menuCard">
-      <div className="thumb" aria-hidden="true" />
+      <img className="thumb" src={item.imageSrc} alt={`${item.name} 이미지`} />
       <div className="menuBody">
         <div className="menuTitleRow">
           <h3 className="menuTitle">{item.name}</h3>

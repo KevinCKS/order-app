@@ -61,6 +61,10 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.06);
 }
 
 @media (max-width: 1024px) {
@@ -79,8 +83,11 @@
 }
 
 .thumb {
-  height: 120px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.02));
+  height: 190px;
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-bottom: 1px solid var(--border);
 }
 
@@ -178,7 +185,7 @@
 .cartPanel {
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: var(--bg);
+  background: rgba(16, 185, 129, 0.05);
   overflow: hidden;
 }
 
@@ -186,6 +193,7 @@
   padding: 14px;
   border-bottom: 1px solid var(--border);
   text-align: left;
+  background: rgba(16, 185, 129, 0.08);
 }
 
 .cartTitle {
