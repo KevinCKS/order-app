@@ -1,0 +1,370 @@
+.page {
+  padding: 18px 18px 28px;
+}
+
+.topNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: var(--primary);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: white;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.tab:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.tab:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.tab.isActive {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.content {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 1024px) {
+  .menuGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.menuCard {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.thumb {
+  height: 120px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.02));
+  border-bottom: 1px solid var(--border);
+}
+
+.menuBody {
+  padding: 14px 14px 10px;
+  text-align: left;
+}
+
+.menuTitleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.menuTitle {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--text-h);
+}
+
+.menuPrice {
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.menuDesc {
+  margin: 8px 0 10px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.options {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.optRow {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.optPrice {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.menuFooter {
+  margin-top: auto;
+  padding: 12px 14px 14px;
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.btnPrimary {
+  width: 100%;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.05s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 0.92);
+}
+
+.btnPrimary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.unitHint {
+  font-size: 12px;
+  color: var(--text);
+  text-align: right;
+}
+
+.cartPanel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.cartHeader {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.cartTitle {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cartBody {
+  padding: 14px;
+}
+
+.cartSplit {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .cartSplit {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cartRightPane {
+  position: sticky;
+  top: 14px;
+}
+
+@media (max-width: 1024px) {
+  .cartRightPane {
+    position: static;
+  }
+}
+
+.empty {
+  padding: 18px 10px;
+  color: var(--text);
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.cartRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.cartRow:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cartLeft {
+  text-align: left;
+  min-width: 0;
+}
+
+.cartName {
+  font-weight: 700;
+  color: var(--text-h);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cartMeta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.qtyControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.qtyBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-border);
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.qtyBtn:hover:not(:disabled) {
+  border-color: rgba(37, 99, 235, 0.55);
+  background: rgba(37, 99, 235, 0.14);
+}
+
+.qtyBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.qtyValue {
+  min-width: 44px;
+  text-align: center;
+  color: var(--text-h);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.qtyRemove {
+  border-radius: 8px;
+  padding: 6px 10px;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  background: rgba(239, 68, 68, 0.1);
+  color: rgb(185, 28, 28);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.qtyRemove:hover {
+  border-color: rgba(239, 68, 68, 0.65);
+  background: rgba(239, 68, 68, 0.14);
+}
+
+.cartRight {
+  font-weight: 800;
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  min-width: 92px;
+}
+
+.cartSummary {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .cartSummary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sumLabel {
+  text-align: left;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.sumValue {
+  text-align: right;
+  color: var(--text-h);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
