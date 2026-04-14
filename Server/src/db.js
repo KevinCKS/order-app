@@ -6,8 +6,6 @@ function shouldUseSsl() {
   const sslMode = (process.env.PGSSLMODE || '').toLowerCase();
   if (sslMode === 'disable') return false;
   if (sslMode === 'require') return true;
-  // Render 환경에서는 기본적으로 SSL을 켠다 (Render Postgres는 보통 SSL 필수)
-  if (process.env.RENDER) return true;
   const host = (process.env.PGHOST || '').toLowerCase();
   if (host.includes('render.com')) return true;
   if (process.env.DATABASE_URL && process.env.DATABASE_URL.includes('render.com')) return true;

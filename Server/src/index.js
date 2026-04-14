@@ -9,14 +9,25 @@ import { seedIfEmpty } from './seed.js';
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
+function getCorsOrigins() {
+  const env = (process.env.CORS_ORIGIN || '').trim();
+  if (env) {
+    return env
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+  return [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+  ];
+}
+
 app.use(
   cors({
-    origin: [
-      'http://localhost:5173',
-      'http://127.0.0.1:5173',
-      'http://localhost:3000',
-      'http://127.0.0.1:3000',
-    ],
+    origin: getCorsOrigins(),
     credentials: true,
   })
 );
