@@ -376,3 +376,116 @@
   white-space: nowrap;
   border: 0;
 }
+
+.menuLoading,
+.errorBanner {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.adminSummary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .adminSummary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.summaryCard {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--bg);
+}
+
+.summaryCard .k {
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.summaryCard .v {
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.adminStockGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .adminStockGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stockCard {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--bg);
+}
+
+.stockTitle {
+  font-weight: 900;
+  color: var(--text-h);
+}
+
+.stockRow {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.adminOrderList {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.adminOrderRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.adminOrderRow:last-child {
+  border-bottom: 0;
+}
+
+.adminOrderMeta {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.muted {
+  color: var(--text);
+  font-size: 12px;
+}
